@@ -1,0 +1,25 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <button (click)="sendRequest()">Send Request</button>
+
+  <button (click)="getArray()">Get Array</button>
+   <p> {{result}}</p>
+  <ul>  
+    <li *ngFor="let user of userService.userArray">
+      {{user.name }}  {{user.tel }}  {{user.email }}
+    </li>
+  </ul>
+ 
+
+<input type="text" [(ngModel)]="newName" >
+<button (click)="addNewUser(newName)">Add</button>
+  <ul style="text-align: left">
+    <app-user [user]="user" *ngFor="let user of userService.userArray">
+    </app-user>
+  </ul>
+  <!--<add-user-list></add-user-list>-->
+
+
